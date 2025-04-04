@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+/* TODO Custom Colors */
+
+/* Backgrounds */
+.bg-primary {
+  background-color: #5474fb;
+}
+
+.bg-secondary {
+  background-color: #ea5e28;
+}
+
+/* Text */
+.text-primary {
+  color: #5474fb;
+} 
+
+.text-secondary {
+  color: #ea5e28;
+}
+
+/* Navigation styles */
+.nav-link {
+  @apply font-medium relative;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ea5e28;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Footer styles */
+.footer-link {
+  @apply font-medium text-sm md:text-base relative;
+  position: relative;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ea5e28;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* TODO Animations */
+
+/* Logo pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.logo-pulse {
+  animation: pulse 3s infinite ease-in-out;
+}
+
+/* Navbar animation */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.nav-animation {
+  animation: slideDown 0.3s ease-in-out;
+}
+
+/* Book card hover animation */
+.book-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Configure daisyUI */
+@layer base {
+  :root {
+    --primary: #5474fb;
+    --secondary: #ea5e28;
+  }
+}
