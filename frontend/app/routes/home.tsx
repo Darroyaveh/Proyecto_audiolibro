@@ -1,74 +1,79 @@
-import { useEffect, useState } from "react";
-import Navbar from "~/components/navbar";
-import Footer from "~/components/footer";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
+import BookSlider from "../components/BookSlider";
 
 export default function Home() {
-    const [isVisible, setIsVisible] = useState(false);
 
-    useEffect(() => {
-        setIsVisible(true);
-    }, []);
 
-    return (
-        <div className="flex flex-col min-h-screen">
-            <Navbar />
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
 
-            <main className="flex-grow">
-                {/* Hero Image Section - Full width but limited height */}
-                <div
-                    className="relative w-full h-[50vh] md:h-[60vh]"
-                    style={{
-                        backgroundImage: "url('/img/FamiliaBg.jpg')",
-                        backgroundSize: "cover",
-                        backgroundPosition: "end bottom"
-                    }}
-                >
-                    {/* Subtle blur and overlay for image */}
-                    <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px]"></div>
-                </div>
+      <main>
+        <section className="relative h-screen flex items-center justify-center bg-[#698cb1] bg-blend-multiply">
+          <div className="absolute inset-0 bg-[#1d4371] opacity-60"></div>
+          <div className="relative z-10 text-center px-4">
+            <h1 className="title-font text-5xl md:text-6xl font-bold text-white mb-6">
+              Libros mágicos para mentes curiosas
+            </h1>
+            <p className="text-xl md:text-2xl text-white mb-8">
+              Ayudamos a niños a descubrir el amor por la lectura.
+            </p>
+            <button
+              type="button"
+              className="bg-[#e7552f] hover:bg-[#f06a48] text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 inline-block"
+              onClick={() =>
+                alert("¡Gracias por tu interés en donar un libro!")
+              }
+            >
+              ¡Donar un libro!
+            </button>
+          </div>
+        </section>
+        <section className="py-20 px-4 bg-[#ffffff]">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="title-font text-4xl font-bold text-[#1d4371] mb-6">
+              Nuestra Misión
+            </h2>
+            <p className="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
+              Promovemos el acceso a la lectura infantil en comunidades
+              vulnerables, porque cada niño merece soñar a través de los libros.
+            </p>
+            <div className="flex flex-wrap justify-center gap-12">
+              <div className="flex flex-col items-center">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png"
+                  alt="Libro"
+                  className="w-20 h-20 mb-4"
+                />
+                <span className="text-[#1d4371] font-semibold">
+                  +5,000 libros donados
+                </span>
+              </div>
+              <div className="flex flex-col items-center">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/1029/1029177.png"
+                  alt="Corazón"
+                  className="w-20 h-20 mb-4"
+                />
+                <span className="text-[#1d4371] font-semibold">
+                  100% sin fines de lucro
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="py-20 px-4 bg-[#698cb1]">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="title-font text-4xl font-bold text-[#1d4371] mb-12 text-center">
+              Libros Destacados
+            </h2>
+            <BookSlider />
+          </div>
+        </section>
+      </main>
 
-                {/* Content Section Below Image */}
-                <div className="bg-white py-4">
-                    <div className="container mx-auto px-6">
-                        <div 
-                            className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${
-                                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                            }`}
-                        >
-                            <h1 className="mb-8 text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-                                Lectura y educación para el campo
-                            </h1>
-
-                            <div className="w-24 h-1 bg-secondary mx-auto mb-8"></div>
-
-                            <p className="text-xl md:text-2xl text-gray-700 font-light leading-relaxed mb-10">
-                                Llegamos hasta los pliegues más apartados de las montañas y los
-                                recodos escondidos de los ríos, para compartir sonrisas, alegrías y
-                                nuevas experiencias con las familias del campo.
-                            </p>
-
-                            <div className="flex flex-wrap justify-center gap-4 mt-10">
-                                <a 
-                                    href="/books" 
-                                    className="px-8 py-3 bg-secondary text-white rounded-md font-medium hover:bg-opacity-90 transition-all animate-pulse-slow"
-                                >
-                                    Explora libros
-                                </a>
-                                <a 
-                                    href="/about" 
-                                    className="px-8 py-3 bg-white border-2 border-primary text-primary rounded-md font-medium hover:bg-primary hover:text-white transition-all"
-                                >
-                                    Conócenos
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                {/* You could add additional content sections here */}
-            </main>
-
-            <Footer />
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 }

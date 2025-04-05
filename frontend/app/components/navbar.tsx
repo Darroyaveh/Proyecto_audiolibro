@@ -52,13 +52,7 @@ export default function Navbar() {
                         </Link>
                         <Link to="/books" className="nav-link text-slate-800 dark:text-white hover:text-secondary">
                             Libros
-                        </Link>
-                        <Link to="/autors" className="nav-link text-slate-800 dark:text-white hover:text-secondary">
-                            Autores
-                        </Link>
-                        <Link to="/audiobooks" className="nav-link text-slate-800 dark:text-white hover:text-secondary">
-                            Audiolibros
-                        </Link>
+                        </Link>               
                         <Link to="/about" className="nav-link text-slate-800 dark:text-white hover:text-secondary">
                             Nosotros
                         </Link>
@@ -67,12 +61,6 @@ export default function Navbar() {
 
                 {/* Right side links */}
                 <div className="hidden md:flex md:items-center space-x-4">
-                    <Link to="/donations" className="nav-link text-slate-800 dark:text-white hover:text-secondary">
-                        Donaciones
-                    </Link>
-                    <Link to="/login" className="px-4 py-2 rounded-md bg-secondary text-white font-medium hover:bg-opacity-90 transition-all">
-                        Ingreso
-                    </Link>
                 </div>
             </div>
 
@@ -94,39 +82,11 @@ export default function Navbar() {
                         Libros
                     </Link>
                     <Link 
-                        to="/autors" 
-                        className="block px-4 py-2 text-slate-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        Autores
-                    </Link>
-                    <Link 
-                        to="/audiobooks" 
-                        className="block px-4 py-2 text-slate-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        Audiolibros
-                    </Link>
-                    <Link 
                         to="/about" 
                         className="block px-4 py-2 text-slate-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
                         onClick={() => setIsMenuOpen(false)}
                     >
                         Nosotros
-                    </Link>
-                    <Link 
-                        to="/donations" 
-                        className="block px-4 py-2 text-slate-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        Donaciones
-                    </Link>
-                    <Link 
-                        to="/login" 
-                        className="block px-4 py-2 bg-secondary text-white rounded-md font-medium hover:bg-opacity-90"
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        Ingreso
                     </Link>
                 </div>
             </div>
