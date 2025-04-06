@@ -57,11 +57,7 @@ export default function Books() {
                 {/* Header with background */}
                 <div className="bg-primary text-white py-12">
                     <div className="container mx-auto px-4">
-                        <h1 className="text-4xl font-bold mb-4">Biblioteca</h1>
-                        <p className="text-xl max-w-3xl">
-                            Explora nuestra colección de libros para todas las edades. Encuentra historias que inspiran,
-                            educan y transforman vidas.
-                        </p>
+                        <h1 className="text-4xl font-bold mb-4 text-center">Biblioteca</h1> {/* Añadido text-center */}
 
                         {/* Search Component */}
                         <SearchBar 

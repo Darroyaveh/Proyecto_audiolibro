@@ -7,12 +7,12 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm }) => {
   return (
-    <div className="mt-8 max-w-lg">
+    <div className="mt-8 max-w-lg mx-auto"> {/* Añadido mx-auto para centrar */}
       <div className="relative">
         <input
           type="text"
-          placeholder="Buscar por título, autor o categoría..."
-          className="w-full py-3 px-4 pr-10 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-secondary"
+          placeholder="Buscar por título o autor"
+          className="w-full py-3 px-4 pr-10 rounded-md text-gray-800 bg-white focus:outline-none focus:ring-2 focus:ring-secondary" // Añadido bg-white para el fondo blanco
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
